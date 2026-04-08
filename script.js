@@ -8,7 +8,7 @@ let state = {
 };
 
 // Per-tab view state (not synced)
-let currentView = localStorage.getItem('currentView') || 'config';
+let currentView = localStorage.getItem('currentView') || 'staff';
 
 let currentModalConsoleId = null;
 let currentModalAction = null;

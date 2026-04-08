@@ -222,7 +222,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -543,17 +543,9 @@ body {
     }
 }
 
-@media (min-width: 769px) and (max-width: 1200px) {
-    .console-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (min-width: 1201px) {
-    .console-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+
+
 
 /* Smooth transitions for status changes */
 .console-card,
