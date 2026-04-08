@@ -4,7 +4,8 @@
       "id": "mnptoph8mmtulyylb9r",
       "name": "Xbox series X",
       "games": [
-        "null"
+        "Plants versus zombies",
+        "Minecraft Dungeons"
       ],
       "maxTime": 20,
       "status": "available",
@@ -86,9 +87,14 @@
     },
     {
       "id": "mnptseouy1ixku5zch",
-      "name": "Meta quest 3s",
+      "name": "Meta quest 3S",
       "games": [
-        "null"
+        "Bonelab",
+        "Beat Saber",
+        "Half-Life: Alyx",
+        "Assassin's creed nexus vr",
+        "Angry birds VR",
+        "Blastone"
       ],
       "maxTime": 15,
       "status": "available",
@@ -99,9 +105,16 @@
     },
     {
       "id": "mnptss41cg252hw75j6",
-      "name": "PS4",
+      "name": "PlayStation 4",
       "games": [
-        "null"
+        "God of War",
+        "Marvels Spider-Man",
+        "Rayman Legends",
+        "Killzone shadow fall",
+        "Lego Star Wars: The Force Awakens",
+        "Witcher 3",
+        "Assassin's creed origins",
+        "Just Dance 2019"
       ],
       "maxTime": 20,
       "status": "available",
@@ -112,9 +125,15 @@
     },
     {
       "id": "mnptsy2ohfzq81axq9m",
-      "name": "PS3",
+      "name": "PlayStation 3",
       "games": [
-        "null"
+        "Motor Storm",
+        "Lego Marvel Superheroes",
+        "Lego Marvel Avengers",
+        "Lego piraci z Karaibów",
+        "Gran Turismo 6",
+        "Portal 2",
+        "Tekken 6"
       ],
       "maxTime": 20,
       "status": "available",
@@ -125,9 +144,13 @@
     },
     {
       "id": "mnptt5esivm4dfotvjq",
-      "name": "PS2",
+      "name": "PlayStation 2",
       "games": [
-        "Null"
+        "Rayman 3",
+        "Smackdown 2008",
+        "Wallace and Gromit",
+        "Burnout revenge",
+        "Sonic heroes"
       ],
       "maxTime": 20,
       "status": "available",
@@ -141,6 +164,52 @@
       "name": "Commodore",
       "games": [
         "null"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnpu4qh975dbwwdnsui",
+      "name": "Xbox series S",
+      "games": [
+        "null"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnpudm5pvcwnm3zftee",
+      "name": "Xbox 360",
+      "games": [
+        "Need For Speed Rivals",
+        "Fifa 15",
+        "Fifa 18",
+        "Fifa 19",
+        "NBA 2k18",
+        "Lego Harry Potter",
+        "Minecraft",
+        "Battlefield 4",
+        "Gears of War",
+        "Kinect Rush",
+        "Kinect Adventures",
+        "Bad Company",
+        "Assassin's Creed",
+        "DiRT",
+        "Pure/LEGO Batman",
+        "Forza 4",
+        "Burnout Paradise",
+        "Gears of War 2",
+        "Wolfenstein",
+        "Halo 3",
+        "Modern Warfare 2."
       ],
       "maxTime": 20,
       "status": "available",
