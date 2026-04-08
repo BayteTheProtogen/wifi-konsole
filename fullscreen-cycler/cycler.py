@@ -5,7 +5,6 @@ import threading
 import sys
 import tty
 import termios
-from pynput import keyboard
 import os
 
 CONFIG_FILE = "config.json"
@@ -13,7 +12,6 @@ CONFIG_FILE = "config.json"
 def load_config():
     default_config = {
         "hotkey": "5",
-
         "delay_seconds": 5.0
     }
     if not os.path.exists(CONFIG_FILE):
@@ -24,8 +22,9 @@ def load_config():
     with open(CONFIG_FILE, "r") as f:
         return json.load(f)
 
-def get_fullscreen_windows():
+def get_windows():
     try:
+        # Get list of managed windows. wmctrl -l returns id, desktop, machine, title
         output = subprocess.check_output(["wmctrl", "-l"]).decode("utf-8")
     except Exception as e:
         print(f"Error running wmctrl: {e}")
@@ -40,13 +39,20 @@ def get_fullscreen_windows():
             continue
 
         win_id = parts[0]
-        # Ignore desktop/root windows typically mapped to 0 or having specific types
+        desktop_id = parts[1]
+
+        # Desktop '-1' indicates sticky windows like docks or desktop background
+        if desktop_id == '-1':
+            continue
+
+        # Optionally check window type to ensure it's a normal window
         try:
-            state_output = subprocess.check_output(["xprop", "-id", win_id, "_NET_WM_STATE"], stderr=subprocess.DEVNULL).decode("utf-8")
-            if "_NET_WM_STATE_FULLSCREEN" in state_output:
+            type_output = subprocess.check_output(["xprop", "-id", win_id, "_NET_WM_WINDOW_TYPE"], stderr=subprocess.DEVNULL).decode("utf-8")
+            if "_NET_WM_WINDOW_TYPE_NORMAL" in type_output:
                 windows.append(win_id)
         except subprocess.CalledProcessError:
-            continue
+            # Fallback if xprop fails, just include it
+            windows.append(win_id)
 
     return windows
 
@@ -79,9 +85,9 @@ class WindowCycler:
     def _cycle_loop(self):
         current_index = 0
         while self.is_running:
-            windows = get_fullscreen_windows()
+            windows = get_windows()
             if not windows:
-                print("No fullscreen windows found. Waiting...")
+                print("No normal windows found. Waiting...")
                 time.sleep(self.delay)
                 continue
 
@@ -115,7 +121,7 @@ if __name__ == "__main__":
     cycler = WindowCycler(delay=config.get("delay_seconds", 5.0))
     hotkey_str = config.get("hotkey", "5")
 
-    print(f"Loaded config. Press '{hotkey_str}' to toggle the fullscreen cycler.")
+    print(f"Loaded config. Press '{hotkey_str}' to toggle the window cycler.")
     print("Press 'q' to quit.")
     print(f"Delay is set to {cycler.delay} seconds.")
 
@@ -131,4 +137,3 @@ if __name__ == "__main__":
     finally:
         cycler.stop()
         print("\nExiting...")
-
