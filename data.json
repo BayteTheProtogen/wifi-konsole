@@ -1,0 +1,157 @@
+{
+  "consoles": [
+    {
+      "id": "mnptoph8mmtulyylb9r",
+      "name": "Xbox series X",
+      "games": [
+        "null"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnptpg5f0i0b0c9o3gf",
+      "name": "Wii",
+      "games": [
+        "Mario Kart Wii",
+        "Wii sports",
+        "Legend of Zelda",
+        "Mario galaxy"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnptq7r0nfqr26jor4",
+      "name": "Super 8Bit game",
+      "games": [
+        "null"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnptqlma2r68p1098wp",
+      "name": "Nintendo 64",
+      "games": [
+        "Mario kart 64"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnptrrg142vtzgmr1gp",
+      "name": "NES",
+      "games": [
+        "Golf",
+        "Mario bros",
+        "tetris",
+        "Super Nintendo World Cup"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnpts3i7nz5b784bkkj",
+      "name": "Gameboy Advance",
+      "games": [
+        "Pokemon emerald"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnptseouy1ixku5zch",
+      "name": "Meta quest 3s",
+      "games": [
+        "null"
+      ],
+      "maxTime": 15,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnptss41cg252hw75j6",
+      "name": "PS4",
+      "games": [
+        "null"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnptsy2ohfzq81axq9m",
+      "name": "PS3",
+      "games": [
+        "null"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnptt5esivm4dfotvjq",
+      "name": "PS2",
+      "games": [
+        "Null"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    },
+    {
+      "id": "mnpttxbvn02bx08mvq",
+      "name": "Commodore",
+      "games": [
+        "null"
+      ],
+      "maxTime": 20,
+      "status": "available",
+      "currentSession": null,
+      "reservations": [],
+      "playNextQueue": [],
+      "sessionLog": []
+    }
+  ],
+  "settings": {
+    "graceMinutes": 5,
+    "defaultMaxTime": 20
+  }
+}

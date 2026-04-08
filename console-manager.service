@@ -1,0 +1,13 @@
+[Unit]
+Description=Gaming Console Manager
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_USERNAME
+WorkingDirectory=/path/to/wifi
+ExecStart=/usr/bin/python3 -m http.server 8000
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
