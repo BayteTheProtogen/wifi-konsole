@@ -2,6 +2,9 @@ import json
 import subprocess
 import time
 import threading
+import sys
+import tty
+import termios
 from pynput import keyboard
 import os
 
@@ -9,7 +12,8 @@ CONFIG_FILE = "config.json"
 
 def load_config():
     default_config = {
-        "hotkey": "<ctrl>+<shift>+,",
+        "hotkey": "5",
+
         "delay_seconds": 5.0
     }
     if not os.path.exists(CONFIG_FILE):
@@ -96,23 +100,35 @@ class WindowCycler:
                 time.sleep(0.1)
                 elapsed += 0.1
 
+def getch():
+    fd = sys.stdin.fileno()
+    old_settings = termios.tcgetattr(fd)
+    try:
+        tty.setraw(sys.stdin.fileno())
+        ch = sys.stdin.read(1)
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+    return ch
+
 if __name__ == "__main__":
     config = load_config()
     cycler = WindowCycler(delay=config.get("delay_seconds", 5.0))
-    hotkey_str = config.get("hotkey", "<ctrl>+<shift>+,")
+    hotkey_str = config.get("hotkey", "5")
 
-    print(f"Loaded config. Press {hotkey_str} to toggle the fullscreen cycler.")
+    print(f"Loaded config. Press '{hotkey_str}' to toggle the fullscreen cycler.")
+    print("Press 'q' to quit.")
     print(f"Delay is set to {cycler.delay} seconds.")
 
-    def on_activate():
-        cycler.toggle()
-
     try:
-        # Use GlobalHotKeys for easy binding
-        with keyboard.GlobalHotKeys({
-            hotkey_str: on_activate
-        }) as h:
-            h.join()
+        while True:
+            char = getch()
+            if char == hotkey_str:
+                cycler.toggle()
+            elif char == 'q' or char == '\x03': # q or Ctrl+C
+                break
     except KeyboardInterrupt:
+        pass
+    finally:
         cycler.stop()
-        print("Exiting...")
+        print("\nExiting...")
+
