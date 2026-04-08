@@ -5,6 +5,7 @@ import threading
 import sys
 import tty
 import termios
+from pynput import keyboard
 import os
 
 CONFIG_FILE = "config.json"
@@ -12,6 +13,7 @@ CONFIG_FILE = "config.json"
 def load_config():
     default_config = {
         "hotkey": "5",
+
         "delay_seconds": 5.0
     }
     if not os.path.exists(CONFIG_FILE):
@@ -129,3 +131,4 @@ if __name__ == "__main__":
     finally:
         cycler.stop()
         print("\nExiting...")
+
